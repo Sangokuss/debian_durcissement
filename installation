@@ -19,3 +19,7 @@ Cela permet l'utilisation du proxy pour les mises à jour (ce qui veut dire que 
 # Réduction de la surface d'attaque
 
 Il est fortement recommandé de n'installer que le strict minimum sur le système afin de réduire la surface d'attaque.
+
+# Mises à jour
+
+Appliquer immédiatement les mises à jour.
