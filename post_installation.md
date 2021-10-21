@@ -61,14 +61,13 @@ Mettre :
   * Durcissement kernel (éditer fichier /etc/sysctl.d/99-sysctl.conf):
 
 <code> 
-fs.suid_dumpable = 0
+ 
+ fs.suid_dumpable = 0
 
  kernel.dmesg_restrict =	1
 
  kernel.core_uses_pid = 1
-
- # Restriction d'accès au buffer dmesg
-
+ 
  kernel.kptr_restrict = 2
 
  kernel.yama.ptrace_scope = 1
