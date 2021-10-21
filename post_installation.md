@@ -43,12 +43,17 @@ may be monitored if unauthorized usage is suspected.
 
 Mettre :
 
-# Uncomment to disable generation of recovery mode menu entries
+<code> 
+#Uncomment to disable generation of recovery mode menu entries
+ 
 #GRUB_DISABLE_RECOVERY="true"
-
+</code> 
+ 
 à 
+
 <code> 
 # Uncomment to disable generation of recovery mode menu entries
+ 
 **GRUB_DISABLE_RECOVERY="true"**
 </code> 
 
