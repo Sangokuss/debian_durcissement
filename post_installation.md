@@ -80,21 +80,11 @@ Mettre :
 
  kernel.ctrl-alt-del = 0
 
- # Activation de l'ASLR
-
  kernel.randomize_va_space = 2
-
- # Interdiction de mapper de la mémoire dans les adresses basses (0)
 
  vm.mmap_min_addr = 65536
 
- # Espace de choix plus grand pour les valeurs de PID
-
  kernel.pid_max = 65536
-
- # Obfuscation des adresses mémoire kernel
-
- # Restreint l'utilisation du sous système perf
 
  kernel.perf_event_paranoid = 3
 
@@ -104,71 +94,47 @@ Mettre :
 
  kernel.perf_cpu_time_max_percent = 1
 
- # désactivation de ipv6 pour toutes les interfaces
-
  net.ipv6.conf.all.disable_ipv6 = 1
 
  dev.tty.ldisc_autoload = 0
-
- # désactivation de l’auto configuration pour toutes les interfaces
 
  net.ipv6.conf.all.autoconf = 0
 
  net.ipv4.conf.default.accept_source_route = 0
 
- # désactivation de ipv6 pour les nouvelles interfaces (ex:si ajout de carte réseau)
-
  net.ipv6.conf.default.disable_ipv6 = 1
-
- #Désactiver le support des "router solicitations"
 
  net.ipv6.conf.all.router_solicitations = 0
 
  net.ipv6.conf.default.router_solicitations = 0
 
- # Ne pas accepter les "router preferences" par "router advertisements"
-
  net.ipv6.conf.all.accept_ra_rtr_pref = 0
 
  net.ipv6.conf.default.accept_ra_rtr_pref = 0
-
- # Pas de configuration auto des prefix par "router advertisements"
 
  net.ipv6.conf.all.accept_ra_pinfo = 0
 
  net.ipv6.conf.default.accept_ra_pinfo = 0
 
- # Pas d'apprentissage du routeur par défaut par "router advertisements"
-
  net.ipv6.conf.all.accept_ra_defrtr = 0
 
  net.ipv6.conf.default.accept_ra_defrtr = 0
-
- # Pas de configuration auto des adresses à partir des "router advertisements "
 
  net.ipv6.conf.all.autoconf = 0
 
  net.ipv6.conf.default.autoconf = 0
 
- # Ne pas accepter les ICMP de type redirect
-
  net.ipv6.conf.all.accept_redirects = 0
 
  net.ipv6.conf.default.accept_redirects = 0
-
- # Refuser les packets de source routing
 
  net.ipv6.conf.all.accept_source_route = 0
 
  net.ipv6.conf.default.accept_source_route = 0
 
- # Nombre maximal d'adresses autoconfigurées par interface
-
  net.ipv6.conf.all.max_addresses = 1
 
  net.ipv6.conf.default.max_addresses = 1
-
- # désactivation de l’auto configuration pour les nouvelles interfaces
 
  net.ipv6.conf.default.autoconf = 0
 
@@ -176,23 +142,11 @@ Mettre :
 
  net.ipv6.conf.default.accept_redirects = 0
 
- # Contrôle l'utilisation des syncookies TCP
-
- # Activer les protections SYN-flood
-
  net.ipv4.tcp_syncookies = 1
 
  net.ipv4.tcp_synack_retries = 5
 
- # Prévenir contre les 'attaques syn flood' courantes
-
- #net.ipv4.tcp_syncookies = 1
-
- # Ignore ICMP request:
-
  net.ipv4.icmp_echo_ignore_all = 1
-
- # Ignore Broadcast request:
 
  net.ipv4.icmp_echo_ignore_broadcasts = 1
 
@@ -227,11 +181,11 @@ Faire ensuite un ~# sysctl -p # pour recharger 😉
   * Couper les services inutiles :
 
 <code> 
-~# echo "install tipc /bin/true" >> /etc/modprobe.d/CIS.conf
+echo "install tipc /bin/true" >> /etc/modprobe.d/CIS.conf
  
-~# echo "install rds /bin/true" >> /etc/modprobe.d/CIS.conf
+echo "install rds /bin/true" >> /etc/modprobe.d/CIS.conf
+
+echo "install sctp /bin/true" >> /etc/modprobe.d/CIS.conf
  
-~# echo "install sctp /bin/true" >> /etc/modprobe.d/CIS.conf
- 
-~# echo "install dccp /bin/true" >> /etc/modprobe.d/CIS.conf
+echo "install dccp /bin/true" >> /etc/modprobe.d/CIS.conf
 </code> 
